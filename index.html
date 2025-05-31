@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HP1 Post Task Deliverable - Yearly Training Plan Infographic</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f8ff;
+    scroll-behavior: smooth; /* For smooth back-to-top */
+}
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    max-height: 400px;
+}
+@media (min-width: 768px) {
+    .chart-container {
+        height: 350px;
+    }
+}
+.material-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Enhanced base transition */
+}
+.material-card:hover {
+    transform: translateY(-6px) scale(1.01); /* Slightly more pronounced hover */
+    box-shadow: 0 12px 20px -4px rgb(0 0 0 / 0.1), 0 5px 8px -5px rgb(0 0 0 / 0.1);
+}
+.flow-step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid #0079c2;
+    color: #004aad;
+    background-color: #e0f2fe;
+    font-weight: 500;
+    flex-grow: 1;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+.flow-step:hover {
+    background-color: #cce7ff; /* Lighter blue */
+    border-color: #004aad; /* Darker border */
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.flow-arrow {
+    font-size: 2rem;
+    color: #0079c2;
+    margin: 0 0.5rem;
+}
+.new-content {
+    margin-top: 1rem;
+    padding-left: 1rem;
+    border-left: 3px solid #0079c2;
+}
+.new-content h4 {
+    font-weight: 700;
+    color: #004aad;
+    margin-bottom: 0.5rem;
+}
+.new-content ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+.new-content li {
+    margin-bottom: 0.25rem;
+}
+
+/* Scroll Reveal Animations */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(40px); /* Start slightly lower */
+    transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+    will-change: opacity, transform; /* Performance hint for browser */
+}
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered list item reveals */
+.new-content ul.stagger-reveal li {
+    opacity: 0;
+    transform: translateX(-25px); /* Start slightly to the left */
+    transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+    will-change: opacity, transform;
+}
+.new-content ul.stagger-reveal.is-visible li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.championship-formula-icon {
+    transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+    display: inline-block; /* Allows transform */
+}
+.championship-formula-icon:hover {
+    transform: scale(1.15); /* Slightly more pronounced */
+    filter: brightness(1.1);
+}
+
+/* Back to Top Button */
+#backToTopBtn {
+    display: none; 
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    border: none;
+    outline: none;
+    background-color: #0079c2;
+    color: white;
+    cursor: pointer;
+    padding: 10px 14px; /* Adjusted padding */
+    border-radius: 50%;
+    font-size: 20px; /* Adjusted size */
+    line-height: 1;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, opacity 0.5s, visibility 0.5s, transform 0.3s;
+}
+#backToTopBtn:hover {
+    background-color: #005a8c;
+    transform: scale(1.1);
+}
+#backToTopBtn.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+#backToTopBtn.hide {
+   opacity: 0;
+   visibility: hidden;
+}
+
+</style>
+</head>
+<body class="text-gray-800">
+
+<div class="container mx-auto p-4 md:p-8">
+
+    <header class="text-center mb-12 reveal-on-scroll">
+        <h1 class="text-4xl md:text-5xl font-bold text-[#004aad] mb-2">HP1 Post Task Deliverable Annual Plan: Carlee Campbell</h1>
+        <p class="text-lg text-[#0079c2]">A Visual Guide: September to March</p>
+    </header>
+
+    <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div class="md:col-span-2 lg:col-span-3 material-card text-center reveal-on-scroll">
+            <h2 class="text-2xl font-bold text-[#004aad] mb-2">Overall Philosophy</h2>
+            <p class="text-md max-w-4xl mx-auto">This plan emphasizes a periodized approach, balancing skill development, tactical understanding, physical conditioning, mental preparedness, and team cohesion. It is designed for high-performance teams in the "Train to Train" or "Train to Compete" stages of Long-Term Player Development (LTAD), with player health and long-term growth as central pillars. Excellence is not an act, but a habit, built through consistent, focused effort.</p>
+            <div class="new-content text-left mt-4 max-w-4xl mx-auto">
+                <h4>Guiding Principles:</h4>
+                <ul class="stagger-reveal">
+                    <li><strong>Leadership:</strong> Employ a transformational and shared leadership style, focusing on player development, inspiration, empowerment, and meaningful change. The coach acts as a "general contractor," overseeing all aspects of team development and fostering clear communication with all support staff. Build trust as a cornerstone of leadership.</li>
+                    <li><strong>Strength & Conditioning (S&C):</strong> Recognize that S&C is crucial for performance; effective communication with the S&C coach is key to managing player load and maximizing off-ice training benefits.</li>
+                    <li><strong>Habit Formation:</strong> Understand that high-performance habits are the small decisions and actions performed daily that lead to success. Focus on creating systems and an environment that supports the development of these habits.</li>
+                    <li><strong>Player Assessment:</strong> Skill assessment is crucial but "only important if you plan to do something about it." It's less about biomechanics and more about evaluating team, positional, and individual strengths/deficiencies to inform planning.</li>
+                    <li><strong>Data-Informed Coaching:</strong> Leverage analytics and data (e.g., player performance tracking, puck movement analysis) to gain objective insights into player and team performance, tactical effectiveness, scouting, and player development opportunities. This includes understanding opponent weaknesses and optimizing line combinations.</li>
+                    <li><strong>Team Culture:</strong> Create a strong team culture founded on clear communication, defined roles, resilience, and adaptability.</li>
+                </ul>
+            </div>
+        </div>
+
+        <section id="september" class="md:col-span-2 lg:col-span-3 material-card reveal-on-scroll">
+            <h2 class="text-3xl font-bold text-[#004aad] border-b-2 border-[#89d6e7] pb-2 mb-4">SEPTEMBER: Foundation & Formation</h2>
+            <p class="mb-6">The season kicks off with an intense focus on building the team from the ground up. This phase is about establishing a strong aerobic base, introducing core systems, finalizing the roster, and forging the team's identity and culture. Skill assessment is a priority, focusing on identifying strengths and areas for improvement, potentially augmented by initial performance data collection.</p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                <div>
+                    <h3 class="text-xl font-bold text-[#0079c2] mb-2 text-center">Player Selection & Assessment</h3>
+                    <p class="text-center mb-4">Tryouts are a multi-faceted evaluation. Focus on Long-Term Player Development (LTPD) principles. Assess based on Team Canada Identity pillars: Talent, Character, and Competitiveness. Utilize structured assessment plans and available performance data (ice time, basic stats, advanced tracking if accessible) for deeper insights.</p>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-2 mt-4">
+                        <div class="flow-step">Weeks 1-2: Intensive Tryouts & Skill/Data Assessment</div>
+                        <div class="flow-arrow hidden md:block">&rarr;</div>
+                        <div class="flow-arrow block md:hidden">&darr;</div>
+                        <div class="flow-step">Week 3: Final Selection & Player/Parent Meetings (Roles, LTPD, Communication)</div>
+                    </div>
+                     <div class="new-content">
+                        <h4>Key Assessment Focus:</h4>
+                        <ul class="stagger-reveal">
+                            <li>Skating: Agility, acceleration, efficiency, speed.</li>
+                            <li>Puck Skills: Creativity, management, protection, deceptive abilities.</li>
+                            <li>Shooting: Quick release, shooting in stride, accuracy.</li>
+                            <li>Hockey Sense & Puck Movement: Awareness, decision-making, anticipation, ability to recognize and execute effective passes.</li>
+                            <li>Analytics: Where available, use data on puck possession, pass success, and shot locations for objective evaluation.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-[#0079c2] mb-2 text-center">Practice Focus Distribution & Initial Development</h3>
+                    <p class="text-center mb-4">Practice time is heavily weighted towards fundamental skill repetition and physical conditioning. Introduce core habits and concepts aligned with National Team standards and a data-informed approach to skill development.</p>
+                    <div class="chart-container">
+                        <canvas id="septemberPracticeFocus"></canvas>
+                    </div>
+                     <div class="new-content">
+                        <h4>Developmental Pillars for September:</h4>
+                        <ul class="stagger-reveal">
+                            <li><strong>S&C:</strong> Establish aerobic base. Communicate with S&C coach about goals and potential player fatigue. Be aware this phase may make players tired and sore.</li>
+                            <li><strong>Team Building:</strong> Enter the "Forming" stage. Establish team culture: compelling vision, core values (respect, honesty, trust, commitment, positive attitude), and clear expectations. Conduct initial team meetings and player-led fun activities. Emphasize shared leadership from the start.</li>
+                            <li><strong>Mental Performance:</strong> Introduce goal setting (SMART goals, process over outcome). For Gen Z athletes, ensure clear, brief, and consistent communication. Help them understand the "why".</li>
+                            <li><strong>Habit Building:</strong> Identify and introduce key on-ice (e.g., good sticks, stopping at net) and off-ice habits (foundational preparation and recovery routines).</li>
+                            <li><strong>Leadership:</strong> Coach to establish vision and direction, building trust and connection by getting to know players individually and clearly communicating roles.</li>
+                            <li><strong>Analytics Introduction:</strong> Begin educating players on how basic performance metrics can help their development.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="october" class="md:col-span-2 lg:col-span-3 material-card reveal-on-scroll">
+            <h2 class="text-3xl font-bold text-[#004aad] border-b-2 border-[#89d6e7] pb-2 mb-4">OCTOBER: System Implementation</h2>
+            <p class="mb-6">With the team formed, October is dedicated to implementing and refining team systems. The focus shifts from general conditioning to game-specific fitness and tactical execution, informed by analytics. Reinforce National Team Habits like puck management, stopping on pucks, and stick on puck details. Utilize data to understand effective passing patterns and offensive zone entry strategies.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                <div>
+                    <h3 class="text-xl font-bold text-[#0079c2] mb-2 text-center">Shift in Practice Time & Tactical Focus</h3>
+                    <p class="text-center mb-4">Practice time shifts towards greater emphasis on tactical systems and team play. Design drills informed by analysis of successful puck movement and passing sequences. Establish game day routines and utilize staff effectively.</p>
+                     <div class="chart-container">
+                        <canvas id="practiceTimeAllocation"></canvas>
+                    </div>
+                    <div class="new-content">
+                        <h4>Key Tactical & Habit Integration:</h4>
+                        <ul class="stagger-reveal">
+                            <li><strong>Team Building:</strong> Navigate "Storming" & "Norming" stages. Foster social cohesion and task cohesion. Build trust through consistent communication.</li>
+                            <li><strong>S&C:</strong> Transition to game-specific fitness. Continuously communicate with S&C regarding player load from system demands.</li>
+                            <li><strong>Mental Performance (Gen Z):</strong> Build player confidence and resilience by focusing on process during system implementation. Introduce emotional control techniques.</li>
+                            <li><strong>Habit Building:</strong> Reinforce on-ice habits within system play. Design practices for automaticity.</li>
+                            <li><strong>Analytics in Tactics:</strong> Use data to optimize line combinations, identify opponent weaknesses, and refine team systems. Focus on data-driven passing strategies and zone entries.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-[#0079c2] mb-2 text-center">Performance Feedback & Game Prep</h3>
+                    <p class="text-center mb-4">Improvement is driven by a cycle of performance, analysis (including video and available data), and correction. Establish clear pre-scout meetings and game review processes that incorporate analytical insights.</p>
+                    <div class="flex flex-col items-center justify-center gap-2">
+                         <div class="flow-step w-full">Game Performance & Initial Pre-Scout (Data-Assisted)</div>
+                         <div class="flow-arrow">&darr; &uarr;</div>
+                         <div class="flow-step w-full">Video & Data Analysis (Team, Individual, Puck Movement)</div>
+                         <div class="flow-arrow">&darr; &uarr;</div>
+                         <div class="flow-step w-full">Corrective Drills & Tactical Adjustments (Connect to practice)</div>
+                    </div>
+                    <div class="new-content">
+                        <h4>Effective Communication & Analytics:</h4>
+                        <ul class="stagger-reveal">
+                            <li>For Gen Z athletes, provide frequent, clear feedback. Discuss performance data constructively.</li>
+                            <li>When discussing mistakes, ask "How" and "What" questions.</li>
+                            <li>Use detailed puck movement and action recognition data (if available) to provide specific feedback on passes, shots, and puck protection.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="november" class="md:col-span-2 lg:col-span-3 material-card reveal-on-scroll">
+            <h2 class="text-3xl font-bold text-[#004aad] border-b-2 border-[#89d6e7] pb-2 mb-4">NOVEMBER: Refinement & Adaptation</h2>
+             <p class="mb-6">November is about achieving consistency. Players master core skills under pressure, leading to advanced tactical understanding. The team adapts strategies to opponents and game situations, using performance analytics to guide adjustments. Assess and reinforce National Team Habits such as Shooting Mentality and Faceoff Readiness.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                <div>
+                    <h3 class="text-xl font-bold text-[#0079c2] mb-2 text-center">Development Focus Evolution</h3>
+                    <p class="text-center mb-4">Priorities evolve towards advanced tactical understanding, mental toughness, and data-informed decision-making. Leadership within the team is encouraged and supported by empowering players with insights.</p>
+                    <div class="chart-container">
+                        <canvas id="developmentFocusRadar"></canvas>
+                    </div>
+                     <div class="new-content">
+                        <h4>Advanced Development:</h4>
+                        <ul class="stagger-reveal">
+                            <li><strong>S&C:</strong> Adapt S&C to individual needs and to mitigate injury risks identified through player load monitoring. Focus on fast-twitch work, flexibility, and mobility.</li>
+                            <li><strong>Team Building:</strong> Progress through "Norming" into "Performing" stages. Foster adaptability and collective problem-solving.</li>
+                            <li><strong>Mental Performance:</strong> Implement imagery/visualization for complex plays. Develop robust self-talk strategies for high-pressure situations.</li>
+                            <li><strong>Habit Building:</strong> Engage in "deep practice" – effortful work pushing past comfort zones to refine skills and tactical execution.</li>
+                            <li><strong>Analytics for Development:</strong> Use data to pinpoint individual areas for skill improvement (e.g., shot selection, pass completion in specific zones) and track progress.</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div>
+                    <h3 class="text-xl font-bold text-[#0079c2] mb-2 text-center">Pyramid of Tactical Mastery & In-Game Adjustments</h3>
+                    <p class="text-center mb-4">Tactical development builds from core systems to nuanced plays. Coaches must "see the game," leveraging ongoing performance analytics and opponent tendency reports to make informed adjustments.</p>
+                    <div class="flex flex-col items-center space-y-2">
+                         <div class="w-2/3 md:w-1/2 p-2 text-center text-white bg-[#004aad] rounded-md shadow-lg reveal-on-scroll">Key Situational Plays (Data-Optimized)</div>
+                         <div class="w-5/6 md:w-3/4 p-3 text-center text-white bg-[#0079c2] rounded-md shadow-lg reveal-on-scroll" style="transition-delay: 0.1s;">System Adjustments & Wrinkles (Analytics-Driven)</div>
+                         <div class="w-full p-4 text-center text-white bg-[#00a4de] rounded-md shadow-lg reveal-on-scroll" style="transition-delay: 0.2s;">Core Systems Mastery (Consistent Execution)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="december" class="lg:col-span-1 md:col-span-1 material-card reveal-on-scroll">
+            <h2 class="text-3xl font-bold text-[#004aad] border-b-2 border-[#89d6e7] pb-2 mb-4">DECEMBER</h2>
+             <p class="mb-6">Focus on sustaining performance while managing workload and fatigue into the holiday break. Maintain intensity but reduce overall volume, emphasizing recovery. Communicate player fatigue to S&C. Monitor player load data if available to prevent overtraining.</p>
+            <h3 class="text-xl font-bold text-[#0079c2] mb-2 text-center">Off-Ice Training & Recovery Focus</h3>
+            <p class="text-center mb-4">Off-ice transitions to active recovery, mobility, and soft tissue work.</p>
+            <div class="chart-container h-64 md:h-auto">
+                <canvas id="decemberOffIceFocus"></canvas>
+            </div>
+            <div class="new-content">
+                <h4>Key Focus Areas:</h4>
+                <ul class="stagger-reveal">
+                    <li><strong>Team Building:</strong> Activities to maintain morale and connection.</li>
+                    <li><strong>Mental Performance:</strong> Strategies for stress management and burnout prevention. Reinforce positive self-talk and mental rest.</li>
+                    <li><strong>Habit Building:</strong> Prioritize recovery habits – sleep, nutrition, and active recovery.</li>
+                    <li><strong>Injury Prevention:</strong> Utilize player load data (from analytics) to tailor S&C and practice intensity to minimize injury risk during a potentially demanding part of the season.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="january" class="md:col-span-2 material-card reveal-on-scroll">
+             <h2 class="text-3xl font-bold text-[#004aad] border-b-2 border-[#89d6e7] pb-2 mb-4">JANUARY: Ramping Up</h2>
+            <p class="mb-6">Elevate intensity and focus for the playoff push. Practices are highly competitive, simulating postseason pressure. Fine-tune special teams and solidify game plans based on season-long data and opponent scouting.</p>
+             <h3 class="text-xl font-bold text-[#0079c2] mb-2 text-center">Training Intensity & Playoff Preparation</h3>
+            <p class="text-center mb-4">Deliberately ramp up training intensity to prepare for peak playoff demands.</p>
+             <div class="chart-container h-64 md:h-auto">
+                <canvas id="trainingIntensity"></canvas>
+            </div>
+            <div class="new-content">
+                <h4>Sharpening the Edge:</h4>
+                <ul class="stagger-reveal">
+                    <li><strong>S&C:</strong> Increase intensity, maintain power and speed, geared towards playoff readiness.</li>
+                    <li><strong>Team Building:</strong> Deepen the "Performing" stage dynamics. Re-establish competitive drive and team focus. Emphasize shared leadership and accountability.</li>
+                    <li><strong>Mental Performance:</strong> Deliberate practice for high-pressure scenarios. Sharpen all mental tools.</li>
+                    <li><strong>Habit Building:</strong> Emphasize high-intensity on-ice habits.</li>
+                    <li><strong>Advanced Scouting:</strong> Utilize detailed analytical reports on upcoming opponents to tailor strategies and player matchups.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="feb-march" class="md:col-span-2 lg:col-span-3 material-card reveal-on-scroll">
+            <h2 class="text-3xl font-bold text-[#004aad] border-b-2 border-[#89d6e7] pb-2 mb-4">FEBRUARY & MARCH: Peaking & Championship Phase</h2>
+            <p class="mb-6">Culmination of the season: achieve peak performance. Practices are short, sharp, and opponent-specific, heavily informed by analytics. Focus on execution, mental fortitude, and recovery. Utilize real-time data if available for in-game adjustments.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                <div>
+                    <h3 class="text-xl font-bold text-[#0079c2] mb-2 text-center">Playoff Focus: On-Ice & Off-Ice</h3>
+                    <p class="text-center mb-4">Off-ice work is dominated by recovery to manage fatigue and maintain peak physical condition.</p>
+                    <div class="chart-container">
+                        <canvas id="playoffFocus"></canvas>
+                    </div>
+                    <div class="new-content">
+                        <h4>Championship Drive Elements:</h4>
+                        <ul class="stagger-reveal">
+                             <li><strong>S&C:</strong> Maintain peak condition, prioritize rapid recovery.</li>
+                             <li><strong>Team Building:</strong> Solidify "Performing" stage unity. Celebrate successes and manage "Adjourning" phase.</li>
+                             <li><strong>Mental Performance:</strong> Achieve and maintain peak mental state: confidence, focus, resilience.</li>
+                             <li><strong>Habit Building:</strong> Absolute consistency in all high-performance habits. "WIN - What's Important Now" focus.</li>
+                             <li><strong>Game Management & Analytics:</strong> Critical in-game adjustments informed by pre-scouted data and real-time analytics (if possible). Effective post-game analysis for quick turnarounds.</li>
+                             <li><strong>Leadership:</strong> Player leaders to be highly influential; coach provides calm, confident guidance.</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div>
+                    <h3 class="text-xl font-bold text-[#0079c2] mb-2 text-center">The Championship Formula</h3>
+                    <p class="text-center mb-4">Success in March is built on flawless execution of data-informed game plans, unwavering mental toughness, and total commitment to recovery.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center p-3 bg-[#e0f2fe] rounded-lg shadow reveal-on-scroll">
+                            <span class="text-3xl mr-4 championship-formula-icon">🎯</span>
+                            <div>
+                                <h4 class="font-bold text-[#004aad]">Peak Execution & Data-Driven Strategy</h4>
+                                <p class="text-sm">Consistent, error-free skills. Brilliant execution of game plans optimized by analytical insights. "Play the guys who are going" based on performance and data.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-3 bg-[#e0f2fe] rounded-lg shadow reveal-on-scroll" style="transition-delay: 0.1s;">
+                           <span class="text-3xl mr-4 championship-formula-icon">🧠</span>
+                            <div>
+                                <h4 class="font-bold text-[#004aad]">Mental Fortitude & Resilience</h4>
+                                <p class="text-sm">Unshakeable confidence, laser focus, and thriving under pressure. "Next Shift" mindset, adapting to adversity.</li>
+                            </div>
+                        </div>
+                         <div class="flex items-center p-3 bg-[#e0f2fe] rounded-lg shadow reveal-on-scroll" style="transition-delay: 0.2s;">
+                            <span class="text-3xl mr-4 championship-formula-icon">🔋</span>
+                            <div>
+                                <h4 class="font-bold text-[#004aad]">Total Recovery & Preparation</h4>
+                                <p class="text-sm">Prioritizing rest, nutrition, and sleep. Efficient post-game debriefs and preparation for the next challenge.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center mt-12 py-6 border-t border-gray-300 reveal-on-scroll">
+        <p class="text-sm text-gray-600">&copy; High-Performance Hockey Training Plan. Enriched with expert content and modern analytics insights. For illustrative purposes.</p>
+    </footer>
+
+</div>
+
+<button id="backToTopBtn" title="Go to top" class="hide">&#8679;</button>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const brilliantBlues = {
+            primary: '#004aad',
+            secondary: '#0079c2',
+            tertiary: '#00a4de',
+            accent: '#89d6e7',
+            light: '#f0f8ff',
+            textColor: '#333333'
+        };
+
+        const chartTooltipPlugin = {
+            tooltip: {
+                callbacks: {
+                    title: function(tooltipItems) {
+                        const item = tooltipItems[0];
+                        let label = item.chart.data.labels[item.dataIndex];
+                        if (Array.isArray(label)) {
+                            return label.join(' ');
+                        }
+                        return label;
+                    }
+                }
+            }
+        };
+        
+        const wrapLabel = (label, maxWidth = 16) => {
+            if (typeof label !== 'string' || label.length <= maxWidth) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            lines.push(currentLine.trim());
+            return lines;
+        };
+
+        const globalChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: { /* Ensure charts animate on load */
+                duration: 1000,
+                easing: 'easeOutQuart'
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        color: brilliantBlues.textColor,
+                        font: {
+                            size: 12
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: { color: brilliantBlues.textColor },
+                    grid: { display: false }
+                },
+                y: {
+                    ticks: { color: brilliantBlues.textColor },
+                    grid: { color: '#e0e0e0' }
+                }
+            }
+        };
+
+        // Chart 1: September Practice Focus (Doughnut Chart)
+        const sepPracticeFocusCtx = document.getElementById('septemberPracticeFocus');
+        if (sepPracticeFocusCtx) {
+            new Chart(sepPracticeFocusCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Skill & Data-Driven Assessment', 'Conditioning (Aerobic Base)', 'Tactical Intro & Culture/Analytics Foundation'],
+                    datasets: [{
+                        data: [45, 25, 30], 
+                        backgroundColor: [brilliantBlues.primary, brilliantBlues.secondary, brilliantBlues.tertiary],
+                        borderColor: brilliantBlues.light,
+                        borderWidth: 4
+                    }]
+                },
+                options: { ...globalChartOptions, plugins: { ...globalChartOptions.plugins, ...chartTooltipPlugin }, scales: { x: { display: false }, y: { display: false } } }
+            });
+        }
+
+        // Chart 2: Practice Time Allocation (Stacked Bar Chart)
+        const pracTimeAllocCtx = document.getElementById('practiceTimeAllocation');
+        if (pracTimeAllocCtx) {
+            new Chart(pracTimeAllocCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['September', 'October'],
+                    datasets: [
+                        {
+                            label: 'Skill Development & Assessment',
+                            data: [50, 30], 
+                            backgroundColor: brilliantBlues.primary,
+                        },
+                        {
+                            label: 'Conditioning',
+                            data: [30, 25], 
+                            backgroundColor: brilliantBlues.secondary,
+                        },
+                         {
+                            label: 'Tactical, Systems & Team Play (Analytics Informed)',
+                            data: [20, 45], 
+                            backgroundColor: brilliantBlues.tertiary,
+                        }
+                    ]
+                },
+                options: { ...globalChartOptions, plugins: { ...globalChartOptions.plugins, ...chartTooltipPlugin }, scales: { x: { stacked: true }, y: { stacked: true, max: 100 } } }
+            });
+        }
+        
+        // Chart 3: Development Focus Evolution (Radar Chart)
+        const devFocusRadarCtx = document.getElementById('developmentFocusRadar');
+        if (devFocusRadarCtx) {
+            new Chart(devFocusRadarCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Technical Skill', 'Tactical Acumen (Data-Driven)', 'Physical Capacity', 'Mental Strength', 'Team Cohesion & Leadership'], 
+                    datasets: [{
+                        label: 'September (Foundation)',
+                        data: [8, 4, 9, 6, 7], 
+                        backgroundColor: 'rgba(0, 74, 173, 0.2)',
+                        borderColor: brilliantBlues.primary,
+                        pointBackgroundColor: brilliantBlues.primary
+                    }, {
+                        label: 'November (Refinement)',
+                        data: [7, 9, 8, 9, 8], 
+                        backgroundColor: 'rgba(0, 164, 222, 0.2)',
+                        borderColor: brilliantBlues.tertiary,
+                        pointBackgroundColor: brilliantBlues.tertiary
+                    }]
+                },
+                options: { ...globalChartOptions, plugins: { ...globalChartOptions.plugins, ...chartTooltipPlugin }, scales: { r: { beginAtZero: true, max: 10, ticks: { display: false }, grid: {color: '#e0e0e0'}, pointLabels: { color: brilliantBlues.textColor, font: {size: 10} } } } }
+            });
+        }
+
+        // Chart 4: December Off-Ice Focus (Pie Chart)
+        const decOffIceCtx = document.getElementById('decemberOffIceFocus');
+        if (decOffIceCtx) {
+            new Chart(decOffIceCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Active Recovery & Mobility', 'Strength Maintenance & Injury Prevention', 'Mental Rejuvenation'], 
+                    datasets: [{
+                        data: [50, 30, 20], 
+                        backgroundColor: [brilliantBlues.tertiary, brilliantBlues.secondary, brilliantBlues.accent],
+                        borderColor: brilliantBlues.light,
+                        borderWidth: 4
+                    }]
+                },
+                options: { ...globalChartOptions, plugins: { ...globalChartOptions.plugins, ...chartTooltipPlugin }, scales: { x: { display: false }, y: { display: false } } }
+            });
+        }
+
+        // Chart 5: Training Intensity Progression (Line Chart)
+        const trainIntensityCtx = document.getElementById('trainingIntensity');
+        if (trainIntensityCtx) {
+            new Chart(trainIntensityCtx, {
+                type: 'line',
+                data: {
+                    labels: ['December (Maintenance)', 'January (Ramp-up)', 'February (Peak)'], 
+                    datasets: [{
+                        label: 'Perceived Practice Intensity & Tactical Focus', 
+                        data: [7, 9, 10], 
+                        borderColor: brilliantBlues.primary,
+                        backgroundColor: 'rgba(0, 74, 173, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: { ...globalChartOptions, plugins: { ...globalChartOptions.plugins, ...chartTooltipPlugin }, scales: { y: { beginAtZero: true, max: 10 } } }
+            });
+        }
+        
+        // Chart 6: Playoff Focus (Horizontal Bar Chart)
+        const playoffFocusCtx = document.getElementById('playoffFocus');
+        if (playoffFocusCtx) {
+            new Chart(playoffFocusCtx, {
+                type: 'bar',
+                data: {
+                    labels: [wrapLabel('On-Ice (Sharp, Tactical, Data-Refined)'), wrapLabel('Off-Ice (Recovery & Analytics Prep)')], 
+                    datasets: [{
+                        label: '% Time Allocation',
+                        data: [40, 60], 
+                        backgroundColor: [brilliantBlues.accent, brilliantBlues.primary]
+                    }]
+                },
+                options: {
+                    ...globalChartOptions,
+                    indexAxis: 'y',
+                    plugins: { ...globalChartOptions.plugins, ...chartTooltipPlugin, legend: { display: false } },
+                    scales: {
+                        x: { max: 100, stacked: true, ticks: { display: false }, grid: { display: false } },
+                        y: { stacked: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        // Scroll Animations & Interactions
+        const revealElements = document.querySelectorAll('.reveal-on-scroll');
+        const staggerLists = document.querySelectorAll('.new-content ul.stagger-reveal');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                } else {
+                    // Optional: To re-animate every time it scrolls into view
+                    // entry.target.classList.remove('is-visible'); 
+                }
+            });
+        }, {
+            threshold: 0.1, // Adjust as needed, 0.1 means 10% of element is visible
+            // rootMargin: "-50px 0px -50px 0px" // Example: trigger a bit earlier/later
+        });
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        staggerLists.forEach(list => {
+            const listItems = list.querySelectorAll('li');
+            const listObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        list.classList.add('is-visible'); // Add to parent ul
+                        listItems.forEach((item, index) => {
+                            item.style.transitionDelay = `${index * 0.075}s`; // Stagger delay
+                        });
+                        // listObserver.unobserve(list); // Optional: Stop observing after first reveal
+                    } else {
+                        // Optional: To re-animate every time
+                        // list.classList.remove('is-visible');
+                        // listItems.forEach((item) => { item.style.transitionDelay = '0s'; });
+                    }
+                });
+            }, { threshold: 0.1 });
+            listObserver.observe(list);
+        });
+
+        // Back to Top Button
+        let backToTopButton = document.getElementById("backToTopBtn");
+        let lastScrollTop = 0;
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > 300) { // Show button after scrolling 300px
+                backToTopButton.classList.add('show');
+                backToTopButton.classList.remove('hide');
+            } else {
+                backToTopButton.classList.add('hide');
+                backToTopButton.classList.remove('show');
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        }, false);
+
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+    });
+</script>
+</body>
+</html>
